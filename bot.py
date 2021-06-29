@@ -39,20 +39,17 @@ async def sendBong(hour):
 
 
 async def checkTime():
+	while 1:
+		now = datetime.now()
 
+		current_time = now.strftime("%H:%M:%S")
+		hour = int(now.strftime("%H"))
+		print("Current Time =", current_time)
 
-	now = datetime.now()
-
-
-	current_time = now.strftime("%H:%M:%S")
-	hour = int(now.strftime("%H"))
-	print("Current Time =", current_time)
-
-	if(current_time[3:] == '00:00'):  # check if matches with the desired time
-		await sendBong(hour)
+		if(current_time[3:] == '00:00'):  # check if matches with the desired time
+			await sendBong(hour)
+		await asyncio.sleep(1) # task runs every 60 seconds
 	
-	await asyncio.sleep(1) # task runs every 60 seconds
-	await checkTime()
 
 		
 
