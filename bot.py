@@ -35,19 +35,19 @@ async def sendBong(hour):
 		if prev_size > 0 :
 			vc = await prev.connect()
 		
-			vc.play(FFmpegPCMAudio("Startup.mp3",))
+			vc.play(FFmpegPCMAudio(executable= "E:\Work\Personal\BigBongBot\BigBongBot\ffmpeg-N-102965-gf531a1a4e8-win64-gpl-shared\bin", source ="Startup.mp3"))
 			await asyncio.sleep(21.994) # length of auto clip
 
 			if hour < 12:
 				for i in range((hour - 1)):
-					vc.play(FFmpegPCMAudio("Bong.mp3"))
+					vc.play(FFmpegPCMAudio(executable= "E:\Work\Personal\BigBongBot\BigBongBot\ffmpeg-N-102965-gf531a1a4e8-win64-gpl-shared\bin", source ="Bong.mp3"))
 					await asyncio.sleep(2.718) # length of auto clip
 			else:
 				for i in range((hour - 13)):
-					vc.play(FFmpegPCMAudio("Bong.mp3"))
+					vc.play(FFmpegPCMAudio(executable= "E:\Work\Personal\BigBongBot\BigBongBot\ffmpeg-N-102965-gf531a1a4e8-win64-gpl-shared\bin", source ="Bong.mp3"))
 					await asyncio.sleep(2.718) # length of auto clip
 		
-			vc.play(FFmpegPCMAudio("LastBong.mp3"))
+			vc.play(FFmpegPCMAudio(executable= "E:\Work\Personal\BigBongBot\BigBongBot\ffmpeg-N-102965-gf531a1a4e8-win64-gpl-shared\bin", source ="LastBong.mp3"))
 			await asyncio.sleep(18.574) # length of auto clip
 			
 			await vc.disconnect()
